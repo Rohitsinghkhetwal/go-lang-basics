@@ -5,12 +5,13 @@ import (
 )
 
 // basically generics in go lang are the way to avoid DRY functions it's syntax is given below
+// instead of giving all types we can give comparable type here 
 
-// func strSlice[G int | string | bool](nums[]G ) {
-// 	for _, nums := range nums {
-// 		fmt.Println(nums)
-// 	}
-// }
+func strSlice[G comparable](nums[]G ) {
+	for _, nums := range nums {
+		fmt.Println(nums)
+	}
+}
 
 // func strSlice(names[] string) {
 // 	for _, names := range names {
@@ -39,7 +40,7 @@ func main() {
 // 	fmt.Println("Generics in golang !")
 // 	nums := []int{3,4,5,6}
 // 	nums2 := []string{"rohit", "max", "chow"}
-// 	strSlice([]string{"golang", "javascript", "nodejs", "java"})
+	strSlice([]string{"golang", "javascript", "nodejs", "java"})
 // 	bl := []bool{true, false, true}
 // 	strSlice(bl)
    myStack := stack[string]{
